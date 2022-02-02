@@ -102,7 +102,8 @@
           </svg>
         </a>
       </div>
-    </footer>
+      {{IMPRINT_TEMPLATE | safe}}
+      </footer>
   </div>
 </body>
 

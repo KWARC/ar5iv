@@ -38,6 +38,11 @@ footer.ar5iv-homepage-footer svg {
   filter:initial;
 }
 
+footer.ar5iv-homepage-footer div.legal a {
+  font-size: small;
+  color: var(--link-text-color);
+}
+
 .ar5iv-text-button {
   max-width: 10rem;
   display: inline-block;

@@ -16,7 +16,7 @@ use ar5iv::cache::{
   LuckyStore
 };
 use ar5iv::assemble_asset::{fetch_zip};
-use ar5iv::constants::AR5IV_CSS_URL;
+use ar5iv::constants::{AR5IV_CSS_URL, IMPRINT_TEMPLATE};
 use std::collections::HashMap;
 use std::path::Path;
 
@@ -32,6 +32,7 @@ lazy_static! {
 async fn about() -> Template {
   let mut map: HashMap<&'static str, &'static str> = HashMap::new();
   map.insert("AR5IV_CSS_URL", AR5IV_CSS_URL);
+  map.insert("IMPRINT_TEMPLATE", IMPRINT_TEMPLATE);
   Template::render("ar5iv", &map)
 }
 
@@ -53,6 +54,7 @@ async fn get_html(
     let mut map: HashMap<&str, &str> = HashMap::new();
     map.insert("id", id);
     map.insert("AR5IV_CSS_URL", AR5IV_CSS_URL);
+    map.insert("IMPRINT_TEMPLATE", IMPRINT_TEMPLATE);
     Err(Template::render("404", &map))
   }
 }
@@ -69,6 +71,7 @@ async fn get_field_html(
     let arxiv_id = format!("{}/{}", field, id);
     map.insert("id", &arxiv_id);
     map.insert("AR5IV_CSS_URL", AR5IV_CSS_URL);
+    map.insert("IMPRINT_TEMPLATE", IMPRINT_TEMPLATE);
     Err(Template::render("404", &map))
   }
 }
@@ -181,6 +184,7 @@ fn general_not_found(req: &Request) -> Template {
   let uri_id = req.uri().path().to_string();
   map.insert("id", &uri_id[1..]);
   map.insert("AR5IV_CSS_URL", AR5IV_CSS_URL);
+  map.insert("IMPRINT_TEMPLATE", IMPRINT_TEMPLATE);
   Template::render("404", &map)
 }
 
@@ -195,6 +199,7 @@ async fn get_log(
     let mut map: HashMap<&str, &str> = HashMap::new();
     map.insert("id", id);
     map.insert("AR5IV_CSS_URL", AR5IV_CSS_URL);
+    map.insert("IMPRINT_TEMPLATE", IMPRINT_TEMPLATE);
     Err(Template::render("404", &map))
   }
 }
@@ -211,6 +216,7 @@ async fn get_field_log(
     let arxiv_id = format!("{}/{}", field, id);
     map.insert("id", &arxiv_id);
     map.insert("AR5IV_CSS_URL", AR5IV_CSS_URL);
+    map.insert("IMPRINT_TEMPLATE", IMPRINT_TEMPLATE);
     Err(Template::render("404", &map))
   }
 }

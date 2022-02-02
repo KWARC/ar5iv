@@ -22,3 +22,9 @@ pub static DOC_NOT_FOUND_TEMPLATE : &str = r###"<!DOCTYPE html>
 </body>
 </html>
 "###;
+
+pub static IMPRINT_TEMPLATE : &str = r###"
+<div class="legal">
+  <a href="https://privacy.kwarc.info/" target="_blank" rel="noopener noreferrer">Imprint, Privacy Policy &amp; Accessibility Notice</a>
+</div>
+"###;
